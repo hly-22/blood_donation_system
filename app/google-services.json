@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "226640689259",
+    "project_id": "blood-donation-system-eef5f",
+    "storage_bucket": "blood-donation-system-eef5f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:226640689259:android:34a44a92e0b36dbac3d92e",
+        "android_client_info": {
+          "package_name": "rmit.ad.blooddonationsystem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "226640689259-2nid30akbn8g2hc366iem1och57m4lji.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJYT6pFPp_erJSAYejRtjkmiBGQ73kYaU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "226640689259-2nid30akbn8g2hc366iem1och57m4lji.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

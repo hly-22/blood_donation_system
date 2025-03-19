@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Donor Name -->
+    <TextView
+        android:id="@+id/tvDonorName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Donor Name"
+        android:textStyle="bold"
+        android:paddingBottom="8dp" />
+
+    <!-- Donation Date -->
+    <TextView
+        android:id="@+id/etDonationDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Select Donation Date"
+        android:padding="10dp"
+        android:textSize="16sp"
+        android:gravity="center_vertical"
+        android:drawableRight="@android:drawable/ic_menu_my_calendar"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <!-- Blood Bag Size (Radio Buttons) -->
+    <TextView
+        android:id="@+id/tvBloodBagSizeLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Blood Bag Size"
+        android:textStyle="bold"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp" />
+
+    <RadioGroup
+        android:id="@+id/rgBloodBagSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbSmallBag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Small (300 mL)" />
+
+        <RadioButton
+            android:id="@+id/rbLargeBag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Large (450 mL)" />
+    </RadioGroup>
+
+</LinearLayout>

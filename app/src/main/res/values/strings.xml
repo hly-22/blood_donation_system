@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Blood Donation System</string>
+    <string name="client_id">226640689259-2nid30akbn8g2hc366iem1och57m4lji.apps.googleusercontent.com</string>
+    <string name="api_key">AIzaSyBD08CIAUnM3B9chkFWRbIzYo5NW_8lfXc</string>
+    <string name="site_manager">Site Manager</string>
+    <string name="donor">Donor</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="first_name">First Name</string>
+    <string name="enter_your_first_name">Enter your first name</string>
+    <string name="last_name">Last Name</string>
+    <string name="enter_your_last_name">Enter your last name</string>
+    <string name="email">Email</string>
+    <string name="enter_your_email_address">Enter your email address</string>
+    <string name="click_here_to_select_date_of_birth">Click here to select date of birth</string>
+    <string name="date_of_birth">Date Of Birth</string>
+    <string name="select_your_sex">Select your sex</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="other">Other</string>
+    <string name="select_your_blood_type">Select your blood type</string>
+</resources>

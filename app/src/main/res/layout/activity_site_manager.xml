@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.SiteManagerActivity">
+
+    <fragment
+        android:id="@+id/siteManagerMap"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:id="@+id/editSiteForm"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:onClick="onBtnClose"
+                android:text="Close" />
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:gravity="center_horizontal"
+            android:text="Edit Donation Site"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <Switch
+            android:id="@+id/switchIsActive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Active" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:text="Site Name"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editLocationNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:hint="Enter your change"
+            android:inputType="text" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="24dp"
+            android:text="Opening Hours"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editOpeningHoursEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:hint="Enter your change"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/editRequiredBloodTypes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="24dp"
+            android:text="Required Blood Types"
+            android:textSize="20sp" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/editChipGroupBloodTypes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="24dp"
+            android:visibility="visible"
+            app:selectionRequired="false"
+            app:singleSelection="false">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/editChipBloodTypeAP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="A+" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/editChipBloodTypeAN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="A-" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/editChipBloodTypeBP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="B+" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/editChipBloodTypeBN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="B-" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/editChipBloodTypeABP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="AB+" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/editChipBloodTypeABN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="AB-" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/editChipBloodTypeOP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="O+" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/editChipBloodTypeON"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="O-" />
+
+        </com.google.android.material.chip.ChipGroup>
+
+        <Button
+            android:id="@+id/btnConfirmEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:onClick="onBtnConfirmEdit"
+            android:text="Confirm" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/viewDonorVolunteerList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/btnCloseList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onBtnClose"
+                android:text="Close" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="List of TYPE HERE"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnAddVolunteer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView"
+            android:onClick="onBtnAddVolunteer"
+            android:text="Add Volunteer"
+            android:visibility="visible" />
+
+        <ListView
+            android:id="@+id/listItems"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/volunteerForm"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="150dp"
+            android:gravity="center_horizontal"
+            android:text="Volunteer Form"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/volunteerFName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:text="First Name"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/volunteerFNameEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:hint="Enter first name"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/volunteerLName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:text="Last Name"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/volunteerLNameEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:hint="Enter last name"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/volunteerEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:text="Email"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/volunteerEmailEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:hint="Enter email"
+            android:inputType="textEmailAddress" />
+
+        <Button
+            android:id="@+id/btnConfirmVolunteer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="100dp"
+            android:layout_marginBottom="8dp"
+            android:onClick="onBtnConfirmVolunteer"
+            android:text="Add Volunteer" />
+
+        <Button
+            android:id="@+id/btnCloseVolunteer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="100dp"
+            android:layout_marginBottom="8dp"
+            android:onClick="onBtnCancel"
+            android:text="Cancel" />
+
+
+    </LinearLayout>
+
+    <!--    Add Site-->
+    <LinearLayout
+        android:id="@+id/newSite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center_horizontal"
+            android:text="Create donation site here?"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btnConfirmNewSite"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:onClick="onBtnConfirmNewSite"
+            android:text="Yes" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/addSiteForm"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:onClick="onBtnClose"
+                android:text="Close" />
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:gravity="center_horizontal"
+            android:text="New Donation Site"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/siteNameText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:text="Site Name"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/locationNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:hint="Enter site name"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/openingHoursText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="24dp"
+            android:text="Opening Hours"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/openingHoursEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:hint="Ex: 9am to 5:30pm or All day"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/requiredBloodTypes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="24dp"
+            android:text="Required Blood Types"
+            android:textSize="20sp" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroupBloodTypes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="24dp"
+            android:visibility="visible"
+            app:selectionRequired="false"
+            app:singleSelection="false">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipBloodTypeAP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="A+" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipBloodTypeAN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="A-" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipBloodTypeBP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="B+" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipBloodTypeBN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="B-" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipBloodTypeABP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="AB+" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipBloodTypeABN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="AB-" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipBloodTypeOP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="O+" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipBloodTypeON"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="O-" />
+
+        </com.google.android.material.chip.ChipGroup>
+
+        <Button
+            android:id="@+id/btnConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:onClick="onBtnConfirm"
+            android:text="Confirm" />
+
+
+    </LinearLayout>
+
+<!--    View Site-->
+    <LinearLayout
+        android:id="@+id/viewSite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="2dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="2dp"
+                android:text="Site Name: "
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/siteNameView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="this is the name" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="2dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="2dp"
+                android:text="Address: "
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/addressView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="216 Tran Van Tra, phuong Tan Phong, quan 7, TP.HCM" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="2dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="2dp"
+                android:text="Opening Hours: "
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/openingHoursView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="9am to 5pm" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="2dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="2dp"
+                android:text="Required Blood Types: "
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/requiredBTView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A+, B+, O+" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnChangeInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/blue_variant"
+                android:text="Change Info" />
+
+            <Button
+                android:id="@+id/btnViewDonors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:onClick="onBtnViewDonors"
+                android:text="View Donors" />
+
+            <Button
+                android:id="@+id/btnViewVolunteers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onBtnViewVolunteers"
+                android:text="View Volunteers" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btnSignOut2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:onClick="onBtnSignOut"
+        android:text="Sign Out" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

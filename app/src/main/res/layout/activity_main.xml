@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/signInOptions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="350dp"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/signInGoogle"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/signInOption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onSignInOption"
+            android:text="Sign In With Email" />
+
+        <Button
+            android:id="@+id/registerOption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:onClick="onRegisterOption"
+            android:text="Create An Account"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/profileImage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        app:shapeAppearanceOverlay="@style/roundedImageView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/profileImage"
+        android:layout_marginTop="10dp"
+        android:id="@+id/profileName" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/profileName"
+        android:layout_marginTop="10dp"
+        android:id="@+id/profileEmail" />
+
+    <Button
+        android:id="@+id/signOutGoogle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profileEmail"
+        android:layout_centerHorizontal="true"
+        android:onClick="onSignOutGoogle"
+        android:text="Sign Out"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/goToActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/signOutGoogle"
+        android:layout_centerHorizontal="true"
+        android:text="Yes, it's me"
+        android:visibility="invisible" />
+</RelativeLayout>

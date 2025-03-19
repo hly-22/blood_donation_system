@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.SignUpActivity">
+
+    <Button
+        android:id="@+id/btnReturn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="24dp"
+        android:onClick="onReturn"
+        android:text="Return" />
+
+    <TextView
+        android:id="@+id/signUpText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:gravity="center"
+        android:text="Sign Up"
+        android:textSize="24dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/siteManagerSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/firstNameTextView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="200dp"
+            android:layout_marginEnd="24dp"
+            android:text="First Name"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/firstNameEditText2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="24dp"
+            android:hint="Enter your first name"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/lastNameTextView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:text="Last Name"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/lastNameEditText2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="24dp"
+            android:hint="Enter your last name"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/phoneNumberTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:text="Phone Number"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/phoneNumberEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="24dp"
+            android:hint="Enter your phone number"
+            android:inputType="phone" />
+
+        <Button
+            android:id="@+id/btnSiteManagerSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="24dp"
+            android:onClick="onBtnSiteManagerSignUp"
+            android:text="Create Site Manager Account" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/proxyDonorForm"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/firstNameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="200dp"
+            android:layout_marginEnd="24dp"
+            android:text="First Name"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/firstNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="24dp"
+            android:hint="Enter your first name"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/lastNameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:text="Last Name"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/lastNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="24dp"
+            android:hint="Enter your last name"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/dateOfBirthTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:text="Date Of Birth"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/dateOfBirthEditText"
+            android:layout_width="366dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="24dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:hint="Click here to select date of birth" />
+
+        <TextView
+            android:id="@+id/sexTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:text="Select your sex"
+            android:textSize="20sp" />
+
+        <RadioGroup
+            android:id="@+id/sexRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/maleRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Male" />
+
+            <RadioButton
+                android:id="@+id/femaleRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Female" />
+
+            <RadioButton
+                android:id="@+id/otherRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Other" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/bloodTypeTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:text="Select your blood type"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/bloodTypeSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp" />
+
+        <Button
+            android:id="@+id/btnDonorSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="24dp"
+            android:onClick="onBtnDonorSignUp"
+            android:text="Create Donor Account" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/emailPasswordSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <EditText
+            android:id="@+id/editEmailSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="250dp"
+            android:layout_marginEnd="24dp"
+            android:hint="Enter your email address"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/editPasswordSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:hint="Enter your password"
+            android:inputType="textPassword"
+            android:visibility="visible" />
+
+        <EditText
+            android:id="@+id/editVerifyPasswordSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:hint="Verify your password"
+            android:inputType="textPassword" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="24dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnSignUpSiteManager"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="1dp"
+                android:layout_weight="1"
+                android:onClick="onBtnSignUpSiteManager"
+                android:text="I am a Site Manager" />
+
+            <Button
+                android:id="@+id/btnSignUpDonor"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="1dp"
+                android:layout_weight="1"
+                android:onClick="onBtnSignUpDonor"
+                android:text="I am a Donor" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>
