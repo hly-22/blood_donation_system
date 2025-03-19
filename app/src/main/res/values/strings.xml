@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Blood Donation System</string>
     <string name="client_id">226640689259-2nid30akbn8g2hc366iem1och57m4lji.apps.googleusercontent.com</string>
-    <string name="api_key">AIzaSyBD08CIAUnM3B9chkFWRbIzYo5NW_8lfXc</string>
+    <string name="api_key">YOUR_API_KEY</string>
     <string name="site_manager">Site Manager</string>
     <string name="donor">Donor</string>
     <string name="email_address">Email Address</string>
